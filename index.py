@@ -46,8 +46,9 @@ def get_starting_point(path, file_len_limit):
 
 def main():
     file_len_limit = 100#100_000_000
-    files_path = "."
-    cur_file_name, cur_decimal, overflow = get_starting_point(files_path, file_len_limit)#"./pi_files")
+    # files_path = "."
+    files_path = "./pi_files"
+    cur_file_name, cur_decimal, overflow = get_starting_point(files_path, file_len_limit)
     print(cur_file_name, cur_decimal, overflow)
 
     digits_per_request = 10#1000
@@ -70,6 +71,7 @@ def main():
         overflow = max(0, (cur_file_len + digits_per_request) - file_len_limit )
         timeout_timer -= 1
         i+=1
+    # os.system(f"cd {path} && git push") <<< TODO
 
     print()
 
