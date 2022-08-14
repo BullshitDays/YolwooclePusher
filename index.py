@@ -6,8 +6,7 @@ import os
 
 def get_digits(start: int=0, n_digits: int=100):
     # Request server for Pi digits
-    # req = requests.get(f"https://api.pi.delivery/v1/pi?start={start}&numberOfDigits={n_digits}")
-    req = requests.get(f"https://api.pi.delivery/v1/pi", params = [("start", start), ("numberOfDigits", n_digits)])
+    req = requests.get("https://api.pi.delivery/v1/pi", params = [("start", start), ("numberOfDigits", n_digits)])
     if req.status_code != 200:
         print(f">>> GET REQUEST ERROR: '{req.text}'")
         return
